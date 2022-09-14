@@ -67,7 +67,7 @@ const gameOver = () => {
   // the current time is the finish time
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
-  const timeTaken = (finishTime - startTime) / 1000;
+  const timeTaken =parseInt((finishTime - startTime) / 1000);
 
   // show result modal
   resultModal.innerHTML = "";
@@ -102,8 +102,8 @@ const closeModal = () => {
 const start = () => {
   // If already started, do not start again
   if (startTime) return;
-else
-  {let count = 3;
+
+  let count = 3;
   countdownOverlay.style.display = "flex";
 
   const startCountdown = setInterval(() => {
@@ -117,13 +117,14 @@ else
       document.addEventListener("keydown", typeController);
       countdownOverlay.style.display = "none";
       display.classList.remove("inactive");
-      clearInterval(startCountdown);
+      
+     clearInterval(startCountdown);
       startTime = new Date().getTime();
       
     }
     count--;
   
-  }, 1000);}}
+  }, 1000);}
   
 
 // START Countdown
@@ -135,7 +136,8 @@ displayHistory();
 // Show typing time spent
 setInterval(() => {
   const currentTime = new Date().getTime();
-  const timeSpent = (currentTime - startTime) / 1000;
+  const timeSpent =parseInt( (currentTime - startTime) / 1000);
+  
 
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
