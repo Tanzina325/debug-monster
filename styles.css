@@ -187,6 +187,24 @@ button {
     padding: 0 20px;
     width: 100%;
   }
+  #question {
+    height: 130px;
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-items: center;
+    justify-content: center;}
+  #display{
+    height:160px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: white;
+    font-size: 28px;
+  align-items: start;
+  
+  }
   .card {
     width: 100%;
     height: 100%;
